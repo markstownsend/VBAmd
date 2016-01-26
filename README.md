@@ -13,7 +13,7 @@ Documentation: http://markstownsend.github.io/vbamd
 
 .NET
 ----
-[.NET Build Status](https://img.shields.io/appveyor/ci/fsgit/vbamd/master.svg)](https://ci.appveyor.com/project/fsgit/vbamd)
+[![.NET Build Status](https://img.shields.io/appveyor/ci/fsgit/vbamd/master.svg)](https://ci.appveyor.com/project/fsgit/vbamd)
 
 ## Maintainer(s)
 
