@@ -1,0 +1,23 @@
+type project
+owners
+    Mark Townsend
+authors 
+    Mark Townsend
+projectUrl
+    http://github.com/markstownsend/VbaMd
+iconUrl
+    https://raw.githubusercontent.com/markstownsend/VbaMd/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/markstownsend/VbaMd/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    F# Markdown VBA Documentation
+summary
+    Extracts markdown from your VBA source files.
+description
+    Let's you write your VBA code documentation using markdown and extracts it for publication.  Takes header comments, function signatures, option statements, global variables and properties.
+
+
