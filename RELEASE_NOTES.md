@@ -1,2 +1,2 @@
-#### 0.0.1-beta - October 24 2015
+#### 0.0.1-beta - April 07 2016
 * Initial release

@@ -4,9 +4,9 @@ open System.Reflection
 [<assembly: AssemblyTitleAttribute("VbaMd")>]
 [<assembly: AssemblyProductAttribute("VbaMd")>]
 [<assembly: AssemblyDescriptionAttribute("Extracts markdown from your VBA source files.")>]
-[<assembly: AssemblyVersionAttribute("1.0")>]
-[<assembly: AssemblyFileVersionAttribute("1.0")>]
+[<assembly: AssemblyVersionAttribute("0.0.1")>]
+[<assembly: AssemblyFileVersionAttribute("0.0.1")>]
 do ()
 
 module internal AssemblyVersionInformation =
-    let [<Literal>] Version = "1.0"
+    let [<Literal>] Version = "0.0.1"

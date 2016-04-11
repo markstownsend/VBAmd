@@ -12,12 +12,12 @@ licenseUrl
 requireLicenseAcceptance
     false
 copyright
-    Copyright 2015
+    Copyright 2016
 tags
     F# Markdown VBA Documentation
 summary
     Extracts markdown from your VBA source files.
 description
-    Let's you write your VBA code documentation using markdown and extracts it for publication.  Takes header comments, function signatures, option statements, global variables and properties.
+    Lets you write your VBA code documentation using markdown and extracts it for publication.  Takes header comments, function signatures, option statements, global variables and properties.
 
 

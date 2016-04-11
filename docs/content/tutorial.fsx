@@ -42,8 +42,12 @@ also
     n2. End [Function|Sub]
     
 
-This method will not get inline comments, only the header and method blocks.  This is by design, the inline
-comments tend to have a very narrow context for example referring only to the current line or next line of code and that doesn't need to be surfaced up to the public documentation. 
+This method will not get inline comments that follow code, only the header and method blocks.  This is by design, the inline
+comments tend to have a very narrow context for example referring only to the current line or next line of code and that doesn't 
+need to be surfaced up to the public documentation. 
+
+TODO: workout how to filter a line of english only comments
+TODO: workout how to include object types as params and return types (I think this is done but not sure about the first point)
 
 *)
 
