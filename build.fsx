@@ -3,8 +3,7 @@
 // --------------------------------------------------------------------------------------
 
 #r @"packages/FAKE/tools/FakeLib.dll"
-#r @"packages/FsCheck.Xunit/lib/net45/FsCheck.xUnit.dll"
-#r @"packages/FsCheck/lib/net45/FsCheck.dll"
+#r @"packages/xunit.extensibility.core/lib/dotnet/xunit.core.dll"
 
 open Fake
 open Fake.Git
@@ -14,9 +13,7 @@ open Fake.Testing
 open Fake.UserInputHelper
 open System
 open System.IO
-open FsCheck
-open FsCheck.Xunit
-
+open Xunit
 
 #if MONO
 #else
@@ -136,19 +133,10 @@ Target "Build" (fun _ ->
 
 // --------------------------------------------------------------------------------------
 // Run the unit tests using test runner
-
-//Target "RunTests" (fun _ ->
-//    !! testAssemblies
-//    |> NUnit (fun p ->
-//        { p with
-//            DisableShadowCopy = true
-//            TimeOut = TimeSpan.FromMinutes 20.
-//            OutputFile = "TestResults.xml" })
-//)
-
+///TODO: Hook up the Xunit2 test runnerwith FAKE
 Target "RunTests" (fun _ ->
     !! testAssemblies
-    |> xUnit (fun options -> options)
+    |> FAKE.XUnitH (fun p -> {p with ToolPath = @""})
 )
 
 #if MONO

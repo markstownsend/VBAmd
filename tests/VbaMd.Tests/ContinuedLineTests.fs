@@ -4,13 +4,6 @@ open System
 open System.IO
 open VbaMd.ContinuedLine
 open Xunit
-
-[<Fact>]
-let ``FileInfo().Directory returns the directory without the path separator`` () =
-    let testvalue = @"C:\mark\excel\iati-xl2xml\src\xl2xml.xlsm"
-    let expected = @"C:\mark\excel\iati-xl2xml\src"
-    let actual = FileInfo(testvalue).Directory
-    Assert.Equal(expected, actual.FullName)
         
 // this is a walkthrough of the processing for this dataset
 let testdata_LineContinuationInTheMiddle = ["001. Public Sub MyFunc(ByVal _";
