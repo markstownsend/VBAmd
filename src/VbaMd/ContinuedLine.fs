@@ -21,9 +21,10 @@ let rec collapseLineContinuations (lines : string list)  =
     | [] -> lines
     | _   -> try 
                 (collapseLineContinuations (collapsing |> List.map( fun f -> combineLine (snd f) (lines.Item( (fst f) + 1))))) @ lines
-             with   // once you reach outside the list for the rest of the continued line then any subsequent continuation is in the next window so you have done all you 
-                    // can do in this window so return it.  is there a better way than catching the IndexOutOfBounds exception, afterall that takes some time to do
-                | :? ArgumentException as ex -> printfn "index out of range exception: %s" ex.Message ; lines
+             with   // once you reach outside the list for the rest of the continued line then any subsequent continuation is in the 
+                    // next window so you have done all you can do in this window so return it.
+                    // TODO:Is there a better way than catching the IndexOutOfBounds exception, afterall that takes some time to do
+                | :? ArgumentException as ex -> printfn "Index out of bounds exception: %s" ex.Message ; lines
                 | _ as ex -> printfn "%s" (ex.ToString()) ; lines
         
 /// <summary>

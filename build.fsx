@@ -46,8 +46,8 @@ let tags = "F# Markdown VBA Documentation"
 // File system information 
 let solutionFile  = "VbaMd.sln"
 
-// Pattern specifying assemblies to be tested using NUnit
-let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
+// Pattern specifying assemblies to be tested using Xunit
+let testDir = "tests/**/bin/Release/"
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
@@ -133,10 +133,9 @@ Target "Build" (fun _ ->
 
 // --------------------------------------------------------------------------------------
 // Run the unit tests using test runner
-///TODO: Hook up the Xunit2 test runnerwith FAKE
-Target "RunTests" (fun _ ->
-    !! testAssemblies
-    |> FAKE.XUnitH (fun p -> {p with ToolPath = @""})
+Target "Test" (fun _ ->
+    !! (testDir @@ "VbaMd.Tests.dll")
+    |> xUnit2 (fun p -> { p with HtmlOutputPath = Some (testDir @@ "VbaMd.Tests.html") })
 )
 
 #if MONO
@@ -202,10 +201,6 @@ Target "GenerateHelp" (fun _ ->
     CopyFile "docs/content/" "RELEASE_NOTES.md"
     Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
 
-    DeleteFile "docs/content/license.md"
-    CopyFile "docs/content/" "LICENSE.txt"
-    Rename "docs/content/license.md" "docs/content/LICENSE.txt"
-
     generateHelp true
 )
 
@@ -213,10 +208,6 @@ Target "GenerateHelpDebug" (fun _ ->
     DeleteFile "docs/content/release-notes.md"
     CopyFile "docs/content/" "RELEASE_NOTES.md"
     Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
-
-    DeleteFile "docs/content/license.md"
-    CopyFile "docs/content/" "LICENSE.txt"
-    Rename "docs/content/license.md" "docs/content/LICENSE.txt"
 
     generateHelp' true true
 )
