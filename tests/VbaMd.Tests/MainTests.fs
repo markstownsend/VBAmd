@@ -129,7 +129,7 @@ let testBasFile = __SOURCE_DIRECTORY__ + @"\testdata\MExcelHelper.bas"
 let parent = "xl2xml.xlsm"
 
 ////********************************************************************//
-////Can't get this to run with FAKE.  Will run through the nunit.console.runner.exe
+////Can't get this to run with FAKE.  Will run through the xunit.console.runner.exe
 ////in the solution tools directory so commented out here for the build
 //[<Fact>]
 //[<UseReporterAttribute(typedefof<Reporters.TortoiseTextDiffReporter>)>]

@@ -133,7 +133,7 @@ Target "Build" (fun _ ->
 
 // --------------------------------------------------------------------------------------
 // Run the unit tests using test runner
-Target "Test" (fun _ ->
+Target "RunTests" (fun _ ->
     !! (testDir @@ "VbaMd.Tests.dll")
     |> xUnit2 (fun p -> { p with HtmlOutputPath = Some (testDir @@ "VbaMd.Tests.html") })
 )
