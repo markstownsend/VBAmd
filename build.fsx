@@ -256,9 +256,9 @@ Target "ReleaseDocs" (fun _ ->
     // delete everything now because we don't want all the code checked back in to the gh-pages branch
     rm_rf tempDocsDir
     CopyRecursive "docs/output" tempDocsDir true |> tracefn "%A"
-    StageAll tempDocsDir
-    Git.Commit.Commit tempDocsDir (sprintf "Update generated documentation for version %s" release.NugetVersion)
-    Branches.push tempDocsDir
+    //StageAll tempDocsDir
+    //Git.Commit.Commit tempDocsDir (sprintf "Update generated documentation for version %s" release.NugetVersion)
+    //Branches.push tempDocsDir
 )
 
 #load "paket-files/fsharp/FAKE/modules/Octokit/Octokit.fsx"
@@ -310,15 +310,7 @@ Target "All" DoNothing
 //  ==> "GenerateDocs"
 //  ==> "All"
 //  =?> ("ReleaseDocs",isLocalBuild)
-//
-//"All" 
-//#if MONO
-//#else
-//  =?> ("SourceLink", Pdbstr.tryFind().IsSome )
-//#endif
-//  ==> "NuGet"
-//  ==> "BuildPackage"
-//
+
 "CleanDocs"
   ==> "GenerateHelp"
   ==> "GenerateReferenceDocs"
